@@ -1,20 +1,32 @@
 package UI;
 
+import Player.CharacterSheet;
+
 import java.util.Scanner;
 
 public class GameEngine {
+    private CharacterSheet characterSheet = new CharacterSheet();
     private boolean running = true;
     private Scanner scanner = new Scanner(System.in);
 
     public void start() {
         while (running) {
             gameStart();
-            String choice = scanner.nextLine();
-            mainMenu(choice);
+            String choice = scanner.nextLine().trim().toLowerCase();
+
+            if (!handleGlobalCommands(choice)) {
+                handleGlobalCommands(choice);
+            }
+
+            // mainMenu(choice);
         }
     }
 
-    private void mainMenu(String val) {
+     private boolean handleGlobalCommands(String choice) {
+        switch (choice) {
+            case "i":
+                characterSheet.getInventory();
+        }
 
     }
 
@@ -25,7 +37,6 @@ public class GameEngine {
         System.out.println("0. If you are not");
 
         // System.out.println("Would you like to go 1. left, 2. forward, or 3. right.");
-
     }
 
     void firstChoice(){

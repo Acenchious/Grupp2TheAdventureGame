@@ -6,7 +6,7 @@ public class CharacterSheet {
     private int health = 100;
     private Inventory inventory = new Inventory();
 
-    public CharacterSheet(String characterName) {
+    public CharacterSheet() {
         this.characterName = characterName;
     }
 
@@ -31,6 +31,7 @@ public class CharacterSheet {
     }
 
     public Inventory getInventory() {
+        System.out.println("Nu visar jag dig mitt inventory");
         return inventory;
     }
 

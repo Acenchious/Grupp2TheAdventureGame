@@ -18,7 +18,6 @@ public class GameEngine {
                 handleGlobalCommands(choice);
             }
 
-            // mainMenu(choice);
         }
     }
 
@@ -26,8 +25,13 @@ public class GameEngine {
         switch (choice) {
             case "i":
                 characterSheet.getInventory();
-        }
+                return true;
 
+            default:
+
+                System.out.println("Invalid choice");
+                return false;
+        }
     }
 
     void gameStart(){

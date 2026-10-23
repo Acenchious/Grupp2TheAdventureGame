@@ -1,4 +1,4 @@
 package Map;
 
-public class Map {
+public class Map  {
 }

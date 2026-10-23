@@ -9,8 +9,8 @@ public class GameEngine {
     public void start() {
         while (running) {
             gameStart();
-            String val = scanner.nextLine();
-            mainMenu(val);
+            String choice = scanner.nextLine();
+            mainMenu(choice);
         }
     }
 
@@ -28,5 +28,23 @@ public class GameEngine {
 
     }
 
+    void firstChoice(){
+        switch (scanner.nextLine()){
+            case "1":
+                firstRoom();
+                break;
+            case "0":
+                System.out.println("One day you will be brave enough!");
+                running = false;
+                break;
+            default:
+                System.out.println("Wrong choice. Try again.");
+        }
+    }
 
+    void firstRoom(){
+        System.out.println("You enter the dungeons first room. The moldy walls stinks and the dropping sound deeper in makes you want to leave.");
+        System.out.println("Do you want to go left or right?");
+
+    }
 }

@@ -1,18 +1,49 @@
 package Player;
 
 public class CharacterSheet {
-    private String userName;
-    private int age;
+    private String characterName;
+    private int level = 1;
+    private int health = 100;
+    private Inventory inventory = new Inventory();
 
-    public CharacterSheet(String userName) {
-        this.userName = userName;
+    public CharacterSheet(String characterName) {
+        this.characterName = characterName;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getCharacterName() {
+        return characterName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setCharacterName(String characterName) {
+        characterName = characterName;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
+    }
+
+    //Metoder
+    public void levelUp() {
+        level++;
+    }
+
+    public void takeDamage(int damage) {
+        health -= damage;
     }
 }
